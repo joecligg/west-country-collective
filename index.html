@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>West Country Collective – Bespoke private tours of the West Country</title>
+<meta name="description" content="Private, bespoke tours of Stonehenge and Salisbury for a single group of up to four guests, from London or Southampton.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --hedge:#26331f; --field:#4d6a3a; --sage:#9bb08a; --barley:#cf9f45; --ochre:#a9742b;
+  --stone:#8b877b; --chalk:#efeee8; --ink:#222a1d;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Karla",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
+body{margin:0;font-family:var(--sans);font-size:1.0625rem;line-height:1.65;color:var(--ink);background:var(--chalk)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;margin:0 0 .6em}
+h1{font-size:clamp(2.6rem,7vw,5rem);letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.5vw,3rem)}
+h3{font-size:1.6rem}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--barley);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+
+/* header */
+header{position:absolute;inset:0 0 auto 0;z-index:5;padding-top:1.25rem}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:#fff;text-decoration:none}
+nav a{color:#f4f1e6;text-decoration:none;margin-left:1.4rem;font-size:.95rem}
+nav a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* hero */
+.hero{position:relative;background:linear-gradient(#e9d9a6 0%,#f0e3b6 34%,#d9c27c 62%);color:var(--hedge);min-height:92vh;overflow:hidden;display:flex;align-items:flex-start}
+.hero .wrap{padding-top:9.5rem;position:relative;z-index:2}
+.hero h1{max-width:13ch;color:var(--hedge)}
+.hero p{font-size:1.2rem;max-width:44ch}
+.sun{position:absolute;right:12%;top:16%;width:clamp(90px,14vw,170px);aspect-ratio:1;border-radius:50%;background:#f7ecc4;box-shadow:0 0 90px 40px rgba(247,236,196,.7)}
+.hills{position:absolute;left:0;right:0;bottom:0;width:100%;height:46%;display:block}
+.btn{display:inline-block;background:var(--hedge);color:#f6f2e3;padding:.85rem 1.6rem;text-decoration:none;border:0;font:500 1rem var(--sans);cursor:pointer;border-radius:2px}
+.btn:hover{background:var(--field)}
+
+/* sections */
+section{padding:5.5rem 0}
+.lede{font-size:1.25rem;max-width:56ch}
+.intro .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.facts{border-left:3px solid var(--barley);padding-left:1.5rem}
+.facts p{margin-bottom:1.1rem}
+.facts strong{font-family:var(--serif);font-size:1.5rem;font-weight:600;display:block;line-height:1.2}
+
+.tours{background:var(--hedge);color:#ecebe0}
+.tours h2,.tours h3{color:#fff}
+.tour-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:2.5rem}
+.tour{border-top:2px solid var(--barley);padding-top:1.5rem}
+.tour .from{color:var(--sage);margin-bottom:1.2rem}
+.tour h4{font-family:var(--serif);font-size:1.25rem;font-weight:600;margin:1.6rem 0 .4rem;color:var(--barley)}
+.tour ul{margin:0;padding-left:1.1rem}
+.tour li{margin-bottom:.35rem}
+.note{margin-top:3rem;color:var(--sage);max-width:70ch}
+
+/* seasons */
+.season-grid{margin-top:2rem;overflow-x:auto}
+.sg{min-width:640px;display:grid;grid-template-columns:130px repeat(12,1fr);gap:4px 3px;align-items:center}
+.sg .m{font-size:.8rem;text-align:center;color:var(--stone)}
+.sg .lab{font-family:var(--serif);font-size:1.15rem;font-weight:600}
+.sg .on{height:26px;background:var(--field);border-radius:2px}
+.sg .off{height:26px;background:rgba(139,135,123,.14);border-radius:2px}
+.sg .gold{background:var(--barley)}
+.golf{margin-top:3rem;padding:2rem;background:#e4e2d6;border-left:3px solid var(--field)}
+.golf h3{margin-bottom:.4em}
+
+/* enquiry */
+.enquire{background:#e4e2d6}
+form{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.4rem;max-width:760px;margin-top:2rem}
+label{display:block;font-size:.95rem;font-weight:500;margin-bottom:.25rem}
+input,select,textarea{width:100%;font:inherit;padding:.7rem .8rem;border:1px solid var(--stone);background:#faf9f4;color:var(--ink);border-radius:2px}
+textarea{min-height:130px;resize:vertical}
+.full{grid-column:1/-1}
+.small{font-size:.9rem;color:#55584c}
+
+footer{background:var(--hedge);color:#cfd3c1;padding:2.5rem 0;font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+
+@media(max-width:760px){
+  .intro .wrap,.tour-grid,form{grid-template-columns:1fr}
+  nav a{margin:0 1rem 0 0}
+  header .wrap{flex-direction:column;align-items:flex-start}
+  .hero .wrap{padding-top:9rem}
+  section{padding:4rem 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">West Country Collective</a>
+    <nav aria-label="Main">
+      <a href="#about">The experience</a>
+      <a href="#tours">Tours</a>
+      <a href="#seasons">Seasonal</a>
+      <a href="#enquire">Request a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="wrap">
+    <h1>The West Country, arranged for your party alone.</h1>
+    <p>Private, bespoke journeys through Stonehenge, Salisbury and the chalk country around them. One group at a time, never more than four guests.</p>
+    <a class="btn" href="#enquire">Request a quote</a>
+  </div>
+  <svg class="hills" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 150 C220 70 420 110 640 150 S1100 90 1440 140 V400 H0Z" fill="#b9bf84"/>
+    <path d="M0 230 C260 150 480 230 720 200 S1180 140 1440 210 V400 H0Z" fill="#7f9a58"/>
+    <path d="M0 310 C240 250 520 330 800 290 S1220 250 1440 300 V400 H0Z" fill="#4d6a3a"/>
+    <path d="M0 360 C300 330 600 385 900 360 S1300 340 1440 365 V400 H0Z" fill="#26331f"/>
+  </svg>
+</div>
+
+<section class="intro" id="about">
+  <div class="wrap">
+    <div>
+      <h2>An unhurried day, set entirely by you.</h2>
+      <p class="lede">We take one group out at a time, so there is no coach, no schedule shared with strangers and no one to wait for.</p>
+      <p>Each day is planned around your interests, your pace and the time of year. Tell us what you would like to see, and we will shape the rest around it.</p>
+    </div>
+    <div class="facts">
+      <p><strong>One group, up to four guests</strong>Your party and no one else.</p>
+      <p><strong>From London or Southampton</strong>Collected from the capital or straight from the docks.</p>
+      <p><strong>Priced by quote</strong>Every itinerary is different, so every price is too.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tours" id="tours">
+  <div class="wrap">
+    <h2>Two ways into the West Country</h2>
+    <p class="lede">Start with a destination, then add as much or as little as you like. Nothing here is fixed.</p>
+    <div class="tour-grid">
+      <article class="tour">
+        <h3>Stonehenge</h3>
+        <p class="from">A private visit from London or Southampton docks.</p>
+        <p>The stones themselves are the centrepiece. The surrounding landscape is full of older and quieter places, and we can build your day around whichever draw you.</p>
+        <h4>Add, at your request</h4>
+        <ul>
+          <li>Woodhenge and Durrington Walls</li>
+          <li>Amesbury History Centre</li>
+          <li>Avebury</li>
+          <li>Boscombe Down Aviation Centre</li>
+          <li>Anything else you would like to see</li>
+        </ul>
+      </article>
+      <article class="tour">
+        <h3>Salisbury</h3>
+        <p class="from">A private visit from London or Southampton docks.</p>
+        <p>A cathedral city with a long memory, best explored on foot and without a timetable. Spend the day as a visitor or as a local.</p>
+        <h4>Add, at your request</h4>
+        <ul>
+          <li>Salisbury Museum</li>
+          <li>Old Sarum</li>
+          <li>A historic pub tour</li>
+          <li>A visit to an authentic British shop</li>
+          <li>Anything else you would like to see</li>
+        </ul>
+      </article>
+    </div>
+    <p class="note">Both tours can be combined into a longer stay, and any day can include a seasonal activity.</p>
+  </div>
+</section>
+
+<section id="seasons">
+  <div class="wrap">
+    <h2>Add something seasonal</h2>
+    <p class="lede">Any tour can include an afternoon of English sport, from village cricket and bowls to lower-league football and rugby. What is on depends on the month.</p>
+    <div class="season-grid" role="group" aria-label="When each sport is in season"><div class="sg" id="sg"></div></div>
+    <p class="small" style="margin-top:1rem">Shaded months show when each sport is typically played. We confirm specific fixtures and tickets once you have chosen your dates.</p>
+    <div class="golf">
+      <h3>Golf in the West Country</h3>
+      <p>Golfing guests can also consult with us on a bespoke golf trip, either alongside a tour or on its own. Tell us how you like to play and we will suggest courses and a pace to suit.</p>
+    </div>
+  </div>
+</section>
+
+<section class="enquire" id="enquire">
+  <div class="wrap">
+    <h2>Request a quote</h2>
+    <p class="lede">Share a few details and we will reply personally with a proposed itinerary and price.</p>
+    <form id="qf">
+      <div><label for="name">Your name</label><input id="name" required autocomplete="name"></div>
+      <div><label for="email">Email</label><input id="email" type="email" required autocomplete="email"></div>
+      <div>
+        <label for="from">Starting from</label>
+        <select id="from"><option>London</option><option>Southampton docks</option><option>Not sure yet</option></select>
+      </div>
+      <div>
+        <label for="tour">Tour</label>
+        <select id="tour"><option>Stonehenge</option><option>Salisbury</option><option>Both</option><option>Not sure yet</option></select>
+      </div>
+      <div><label for="guests">Guests (maximum 4)</label><input id="guests" type="number" min="1" max="4" value="2"></div>
+      <div><label for="date">Preferred date</label><input id="date" type="date"></div>
+      <div class="full"><label for="msg">Anything you would like to include</label><textarea id="msg" placeholder="Extra stops, seasonal activities, golf, dietary needs…"></textarea></div>
+      <div class="full"><button class="btn" type="submit">Send enquiry</button> <span class="small">This opens your email app with the details filled in.</span></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>West Country Collective</span>
+    <span>Bespoke private tours of the West Country</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var M=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  // [label, months in season (1-12), highlight colour?]
+  var rows=[
+    ["Cricket",[4,5,6,7,8,9],false],
+    ["English bowls",[5,6,7,8,9],true],
+    ["Football",[8,9,10,11,12,1,2,3,4,5],false],
+    ["Rugby",[9,10,11,12,1,2,3,4,5],true],
+    ["Golf",[1,2,3,4,5,6,7,8,9,10,11,12],false]
+  ];
+  var h='<span></span>';
+  M.forEach(function(m){h+='<span class="m">'+m+'</span>'});
+  rows.forEach(function(r){
+    h+='<span class="lab">'+r[0]+'</span>';
+    for(var i=1;i<=12;i++){
+      var on=r[1].indexOf(i)>-1;
+      h+='<span class="'+(on?'on'+(r[2]?' gold':''):'off')+'"'+(on?' title="'+r[0]+' – '+M[i-1]+'"':'')+'></span>';
+    }
+  });
+  document.getElementById('sg').innerHTML=h;
+
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(id){return document.getElementById(id).value};
+    var body="Name: "+v('name')+"\nEmail: "+v('email')+"\nStarting from: "+v('from')+"\nTour: "+v('tour')+
+      "\nGuests: "+v('guests')+"\nPreferred date: "+(v('date')||"Flexible")+"\n\n"+v('msg');
+    window.location.href="mailto:hello@westcountrycollective.com?subject="+encodeURIComponent("Quote request – "+v('tour'))+"&body="+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
